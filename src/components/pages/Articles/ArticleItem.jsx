@@ -1,5 +1,5 @@
 import React from 'react'
-import { cutText } from './helpers/cutText'
+import { cutText } from '../../helpers/cutText'
 
 const ArticleItem = ({ title, id, author, description, createdAt, tags }) => {
   return (
