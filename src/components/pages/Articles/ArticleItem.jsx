@@ -3,6 +3,7 @@ import { cutText } from '../../helpers/cutText'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteArticleThunk } from '../../../redux/articles/operations'
 import { selectUser } from '../../../redux/selectors'
+import { formatDistanceToNow } from 'date-fns'
 
 const ArticleItem = ({ title, id, author, description, createdAt, tags }) => {
   const dispatch = useDispatch()
@@ -13,7 +14,10 @@ const ArticleItem = ({ title, id, author, description, createdAt, tags }) => {
       <p className='italic'>{author}</p>
       <div className='flex gap-4'>
         {tags?.map(tag => <span key={tag} className='border-2 px-4'>{tag}</span>)}</div>
-      <p className='font-light'>{createdAt}</p>
+      <p className='font-light'>{formatDistanceToNow(
+        createdAt,
+        { addSuffix: true }
+      )}</p>
       <p className='text-xl'> {cutText(description)} </p>
       <div className='flex gap-4 py-2 mt-4 justify-end'>
         {user === author && (<>
