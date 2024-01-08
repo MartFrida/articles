@@ -1,8 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { articleReducer } from "./slice";
+import { articleReducer } from "./articles/slice";
+import { userReducer } from './user/slice'
+
 
 const rootReducer = combineReducers({
   articles: articleReducer,
+  user: userReducer,
 })
 
 export const store = configureStore({

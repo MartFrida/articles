@@ -1,17 +1,19 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 // import { addArticle } from '../redux/slice'
 import { useNavigate } from 'react-router-dom'
-import { addArticleThunk } from '../redux/operations'
+import { addArticleThunk } from '../redux/articles/operations'
+import { selectUser } from '../redux/selectors'
 
 const ArticleForm = () => {
   const { register, handleSubmit, reset } = useForm()
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const user = useSelector(selectUser)
   const submit = data => {
-    console.log({ ...data, tags: data.tags.split(','), author: 'Mari', createdAt: new Date() })
-    dispatch(addArticleThunk({ ...data, tags: data.tags.split(','), author: 'Mari', createdAt: Date.now() }))
+    // console.log({ ...data, tags: data.tags.split(','), author: 'Mari', createdAt: new Date() })
+    dispatch(addArticleThunk({ ...data, tags: data.tags.split(','), author: user, createdAt: Date.now() }))
     reset()
     navigate('/articles')
   }
