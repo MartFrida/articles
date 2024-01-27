@@ -13,6 +13,7 @@ const Header = () => {
         <h2 className='text-red-500 font-bold text-center md:text-white lg:text-violet-600 hover:text-white transition-colors duration-300'>{user || 'logo'}</h2>
         <NavLink to='/articles' className='text-white hover:text-'>Articles</NavLink>
         <button onClick={() => navigate('/articles/new')} className='bg-white px-4 py-1 text-xl rounded-md'>Add article</button>
+        <NavLink to='/register'>SignUp</NavLink>
       </header>
     </>
 
