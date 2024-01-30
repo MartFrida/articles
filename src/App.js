@@ -3,6 +3,7 @@ import Articles from './components/pages/Articles/Articles';
 import Header from './components/Header';
 import NewArticle from './components/pages/NewArticle/NewArticle';
 import Register from './components/pages/Register/Register';
+import Login from './components/pages/Login/Login';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path='/articles' element={<Articles />} />
         <Route path='/articles/new' element={<NewArticle />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
         <Route path='*' element={<h2>Page not found</h2>} />
       </Routes>
     </div>
