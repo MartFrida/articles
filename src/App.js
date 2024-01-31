@@ -9,8 +9,12 @@ import { refreshThunk } from './redux/auth/operations';
 import { useEffect } from 'react';
 
 function App() {
+
   const dispatch = useDispatch()
-  useEffect(() => dispatch(refreshThunk()), [dispatch])
+  useEffect(() => {
+    dispatch(refreshThunk())
+  }, [dispatch])
+
   return (
     <div className="App">
       <Header />
