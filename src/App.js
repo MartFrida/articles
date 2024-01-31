@@ -4,8 +4,13 @@ import Header from './components/Header';
 import NewArticle from './components/pages/NewArticle/NewArticle';
 import Register from './components/pages/Register/Register';
 import Login from './components/pages/Login/Login';
+import { useDispatch } from 'react-redux';
+import { refreshThunk } from './redux/auth/operations';
+import { useEffect } from 'react';
 
 function App() {
+  const dispatch = useDispatch()
+  useEffect(() => dispatch(refreshThunk()), [dispatch])
   return (
     <div className="App">
       <Header />
