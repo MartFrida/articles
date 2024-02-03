@@ -1,13 +1,13 @@
 import React from 'react'
-import { cutText } from '../../helpers/cutText'
+import { cutText } from '../../../helpers/cutText'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteArticleThunk } from '../../../redux/articles/operations'
-import { selectUser } from '../../../redux/selectors'
+import { selectUserName } from '../../../redux/selectors'
 import { formatDistanceToNow } from 'date-fns'
 
 const ArticleItem = ({ title, id, author, description, createdAt, tags }) => {
   const dispatch = useDispatch()
-  const user = useSelector(selectUser)
+  const user = useSelector(selectUserName)
   return (
     <div className='w-[90%] mx-auto mt-2 p-4 border-2 border-black rounded-md shadow-md flex flex-col items-start'>
       <h2 className='text-4xl font-bold'>{title}</h2>

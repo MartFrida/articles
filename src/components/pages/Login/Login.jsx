@@ -20,7 +20,7 @@ const Login = () => {
     dispatch(loginThunk(data))
       .unwrap()
       .then((res) => {
-        navigate('/articles')
+        // navigate('/articles')
         toast.success(`Welcome ${res.user.name}`)
       })
       .catch(() => { toast.error('Something went wrong!') })

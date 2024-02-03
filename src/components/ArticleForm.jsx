@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from 'react-redux'
 // import { addArticle } from '../redux/slice'
 import { useNavigate } from 'react-router-dom'
 import { addArticleThunk } from '../redux/articles/operations'
-import { selectUser } from '../redux/selectors'
+import { selectUserName } from '../redux/selectors'
 
 const ArticleForm = () => {
   const { register, handleSubmit, reset } = useForm()
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const user = useSelector(selectUser)
+  const user = useSelector(selectUserName)
   const submit = data => {
     // console.log({ ...data, tags: data.tags.split(','), author: 'Mari', createdAt: new Date() })
     dispatch(addArticleThunk({ ...data, tags: data.tags.split(','), author: user, createdAt: Date.now() }))
