@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { addArticleThunk, deleteArticleThunk, fetchData } from "./operations"
+import { logoutThunk } from "../auth/operations"
 
 const initialState = {
   items: [],
@@ -25,6 +26,9 @@ const slice = createSlice({
       })
       .addCase(deleteArticleThunk.fulfilled, (state, { payload }) => {
         state.items = state.items.filter(item => item.id !== payload)
+      })
+      .addCase(logoutThunk.fulfilled, state => {
+        state.items = []
       })
   }
 })
