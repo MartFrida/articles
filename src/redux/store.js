@@ -12,6 +12,7 @@ import {
   REGISTER,
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import { articleApi } from "./rtqQuery/atriclesAPI";
 
 const persistConfig = {
   key: 'auth',
@@ -24,7 +25,8 @@ const persistedReducer = persistReducer(persistConfig, authReducer)
 
 const rootReducer = combineReducers({
   articles: articleReducer,
-   auth: persistedReducer,
+  auth: persistedReducer,
+  [articleApi.reducerPath]: articleApi.reducer,
 })
 
 export const store = configureStore({
@@ -34,7 +36,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).concat(articleApi.middleware),
   devTools: process.env.NODE_ENV !== 'production'
 })
 
