@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { refreshThunk } from './redux/auth/operations';
 import { useEffect } from 'react';
 import PrivateRoute from './redux/routesConfig/PrivateRoute';
-import HomePage from './components/pages/HomePage/HomePage';
+import HomePage from './pages/HomePage/HomePage';
 import PublicRoute from './redux/routesConfig/PublicRoute';
 import { selectIsRefresh } from './redux/selectors';
 import Loader from './components/Loader';
