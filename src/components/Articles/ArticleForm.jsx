@@ -3,8 +3,8 @@ import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 // import { addArticle } from '../redux/slice'
 import { useNavigate } from 'react-router-dom'
-import { addArticleThunk } from '../redux/articles/operations'
-import { selectUserName } from '../redux/selectors'
+import { addArticleThunk } from '../../redux/articles/operations'
+import { selectUserName } from '../../redux/selectors'
 
 const ArticleForm = () => {
   const { register, handleSubmit, reset } = useForm()

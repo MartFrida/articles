@@ -16,11 +16,15 @@ const Header = () => {
         {userName || 'logo'}
       </NavLink>
       <NavLink to='/articles' className='text-white hover:text-'>Articles</NavLink>
-      <button onClick={() => navigate('/articles/new')} className='bg-white px-4 py-1 text-xl rounded-md'>Add article</button>
+
+      {/* <button onClick={() => navigate('/articles/new')} className='bg-white px-4 py-1 text-xl rounded-md'>Add article</button> */}
+      <NavLink to='/articlesRTK' className='text-white hover:text-'>RTK OUERY</NavLink>
+
       {!isLoggedIn && (<>
         <NavLink to='/register'>SignUp</NavLink>
         <NavLink to='/login'>Login</NavLink>
       </>)}
+
       {isLoggedIn && (<>
         |<button onClick={() => dispatch(logoutThunk())} className='text-white font-bold'>Exit</button>
       </>)}

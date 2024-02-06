@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 // import Navigation from '../../Navigation'
 import ArticleItem from './ArticleItem'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectArticles } from '../../../redux/selectors'
-import { fetchData } from '../../../redux/articles/operations'
-// import { login } from '../../../redux/user/slice'
+import { selectArticles } from '../../redux/selectors'
+import { fetchData } from '../../redux/articles/operations'
+// import { login } from '../../redux/user/slice'
 
 const Articles = () => {
   const dispatch = useDispatch()

@@ -1,8 +1,8 @@
 import React from 'react'
-import { cutText } from '../../../helpers/cutText'
+import { cutText } from '../../helpers/cutText'
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteArticleThunk } from '../../../redux/articles/operations'
-import { selectUserName } from '../../../redux/selectors'
+import { deleteArticleThunk } from '../../redux/articles/operations'
+import { selectUserName } from '../../redux/selectors'
 import { formatDistanceToNow } from 'date-fns'
 
 const ArticleItem = ({ title, id, author, description, createdAt, tags }) => {

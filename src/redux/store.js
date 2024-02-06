@@ -13,6 +13,7 @@ import {
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import { articleApi } from "./rtqQuery/atriclesAPI";
+import { setupListeners } from "@reduxjs/toolkit/query";
 
 const persistConfig = {
   key: 'auth',
@@ -41,3 +42,4 @@ export const store = configureStore({
 })
 
 export const persistor = persistStore(store)
+setupListeners(store.dispatch)

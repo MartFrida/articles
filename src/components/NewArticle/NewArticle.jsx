@@ -1,5 +1,5 @@
 import React from 'react'
-import ArticleForm from '../../ArticleForm'
+import ArticleForm from '../Articles/ArticleForm'
 
 const NewArticle = () => {
   return (
