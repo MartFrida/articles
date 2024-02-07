@@ -9,8 +9,9 @@ const ArticleItemRTKQ = ({ title, id, author, description, createdAt, tags }) =>
   const [deleteArticle] = useDeleteArticleMutation()
   const [rename] = useRenameArticleMutation()
   const user = useSelector(selectUserName)
+
   return (
-    <div className='w-[90%] mx-auto mt-2 p-4 border-2 border-black rounded-md shadow-md flex flex-col items-start'>
+    <div className='w-[90%] bg-white mx-auto my-3.5 p-4  rounded-md shadow-lg border border-gray-300  flex flex-col items-start'>
       <h2 className='text-4xl font-bold'>{title}</h2>
       <p className='italic'>{author}</p>
       <div className='flex gap-4'>
@@ -19,15 +20,25 @@ const ArticleItemRTKQ = ({ title, id, author, description, createdAt, tags }) =>
         createdAt,
         { addSuffix: true }
       )}</p>
-      <p className='text-xl'> {cutText(description)} </p>
+      <p className='text-xl first-letter:text-7xl'> {cutText(description)} </p>
       <div className='flex gap-4 py-2 mt-4 justify-end'>
         {user === author && (
           <>
-            <button onClick={() => rename({ title, id, author, description, createdAt, tags })} className='border-2 border-black shadow-md px-4 py-1 rounded-md'>edit</button>
-
-            <button onClick={() => deleteArticle(id)} className='border-2 border-black shadow-md px-4 py-1 rounded-md'>delete</button>
+            <button onClick={() => rename({ title, id, author, description, createdAt, tags })} className='relative'>
+              <span className="absolute top-0 left-0 mt-1 ml-1 h-full w-full rounded bg-gray-600 "></span>
+              <span className="fold-bold relative inline-block h-full w-full rounded border-2 border-gray-600 bg-white px-3 py-1 text-base font-bold text-black transition duration-100 hover:bg-gray-600 hover:text-white ">edit</span>
+            </button>
+            <button onClick={() => deleteArticle(id)} className='relative'>
+              <span className="absolute top-0 left-0 mt-1 ml-1 h-full w-full rounded bg-gray-700 "></span>
+              <span className="fold-bold relative inline-block h-full w-full rounded border-2 border-gray-700 bg-white px-3 py-1 text-base font-bold text-black transition duration-100 hover:bg-gray-600 hover:text-white ">delete</span>
+            </button>
           </>)}
-        <button className='border-2 border-black shadow-md px-4 py-1 rounded-md'>read more</button>
+
+        <button className='relative'>
+          <span className="absolute top-0 left-0 mt-1 ml-1 h-full w-full rounded bg-gray-800 "></span>
+          <span className="fold-bold relative inline-block h-full w-full rounded border-2 border-black bg-white px-3 py-1 text-base font-bold text-black transition duration-100 hover:bg-gray-600 hover:text-white ">read more</span>
+        </button>
+
 
       </div>
     </div>
