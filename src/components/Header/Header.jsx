@@ -10,7 +10,7 @@ const Header = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn)
   const dispatch = useDispatch()
   return (
-    <header className='text-3xl text-zinc-700 font-bold py-4 bg-white flex justify-between px-4 shadow-md fixed top-0 left-0 right-0 u'>
+    <header className='text-3xl text-zinc-700 font-bold py-4 bg-white flex justify-between px-4 shadow-md fixed top-0 left-0 right-0 z-10'>
 
       <NavLink to='/' className='hover:text-zinc-950 '>
         {userName || 'logo'}
