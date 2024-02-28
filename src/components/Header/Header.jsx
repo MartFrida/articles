@@ -10,7 +10,7 @@ const Header = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn)
   const dispatch = useDispatch()
   return (
-    <header className='text-3xl text-zinc-700 font-bold py-4 bg-white flex justify-between px-4 shadow-md fixed top-0 left-0 right-0 z-10'>
+    <header className='text-3xl font-bold py-4 bg-header-color flex justify-between px-4 shadow-md fixed top-0 left-0 right-0 z-10'>
 
       <NavLink to='/' className='hover:text-zinc-950 '>
         {userName || 'logo'}
@@ -18,7 +18,7 @@ const Header = () => {
 
       <div className='flex justify-around gap-x-12 uppercase'>
         <NavLink to='/articlesRTK/new' className='hover:text-zinc-950 '>Add your article</NavLink>
-        <NavLink to='/articlesRTK' className='hover:text-zinc-950 '>Articles</NavLink>
+        <NavLink to='/articlesRTK' className='hover:text-zinc-950 '>All Articles</NavLink>
       </div>
 
       {!isLoggedIn && (<div className='flex gap-x-4 '>

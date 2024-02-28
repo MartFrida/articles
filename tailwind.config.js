@@ -1,8 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}",],
+  content: ["./src/**/*.{js,jsx,ts,tsx, s?css}",],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('imgs/bg-texture.webp')",
+      },
+      fontFamily: {
+        display: 'Roboto, sans-serif', // Adds a new `font-display` class
+      },
+      screens: {
+        '3xl': '1600px', // Adds a new `3xl:` screen variant
+      },
+      colors: {
+        'header-color': 'var(--dark-purple)',
+      }
+    },
   },
   plugins: [],
 }
