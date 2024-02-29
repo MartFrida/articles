@@ -14,6 +14,9 @@ module.exports = {
       },
       colors: {
         'header-color': 'var(--dark-purple)',
+        'light-purple': 'var(--light-purple)',
+        'medium-purple': 'var(--medium-purple)',
+        'medium-purple-hover': 'var(--medium-purple-hover)',
       }
     },
   },
