@@ -15,16 +15,19 @@ const ArticleFormRTKQ = () => {
     reset()
     navigate('/articlesRTK')
   }
+  const handleClosePage = () => navigate('/articlesRTK')
   return (
-    <div className=" flex min-h-screen flex-1 flex-col justify-center item-center px-6 py-12 lg:px-8">
+    <div className=" flex justify-center items-center h-screen px-4 pt-16  lg:px-8 bg-hero-pattern w-full  bg-cover" >
       <form onSubmit={handleSubmit(submit)}
-        className='border-2 w-[90%] mx-auto flex flex-col gap-6 rounded-md py-8 px-4 shadow-lg border border-gray-300 justify-center bg-white'>
-        <input placeholder='Article title' {...register('title')} className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 ' />
-        <textarea placeholder='Article text' {...register('description')} className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 ' />
+        className='w-full bg-white grid gap-4 shadow-lg border border-gray-300 rounded-md px-6 py-12 '>
+        <input autoFocus placeholder='Article title' {...register('title')} className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 ' />
+        <textarea rows="8" placeholder='Article text' {...register('description')} className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 ' />
         <input placeholder='Article tags' {...register('tags')} className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 ' />
-        <div className='flex gap-x-8'>
-          <button className=' shadow-lg w-[30%] rounded border-2  bg-white px-3 py-3 text-base font-bold text-emerald-600 transition duration-100 hover:shadow-emerald-500'>Add article</button>
-          <button type='button' className='shadow-lg w-[30%] rounded border-2  bg-white px-3 py-3 text-base font-bold text-rose-600 transition duration-100 hover:shadow-rose-500'>Cancel</button>
+        <div className='flex gap-x-4 md:gap-x-8 text-white'>
+
+          <button className=' shadow-lg bg-medium-purple-hover rounded py-3 px-4 md:px-6 max-w-48 text-base md:text-xl font-medium tracking-wide hover:scale-105 hover:bg-medium-purple-hover duration-300 transition hover:shadow-emerald-500'>Add article</button>
+
+          <button onClick={handleClosePage} className='shadow-lg bg-medium-purple-hover rounded py-3 px-4 md:px-6 max-w-48 text-base md:text-xl font-medium tracking-wide hover:scale-105 hover:bg-medium-purple-hover duration-300 transition hover:shadow-rose-500'>Cancel</button>
 
         </div>
 

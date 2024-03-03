@@ -17,8 +17,8 @@ const Register = () => {
   }
 
   return (
-    <div className='flex justify-center items-center min-h-screen px-6 py-12 lg:px-8'>
-      <form onSubmit={handleSubmit(submit)} className='bg-white grid gap-4 shadow-lg border border-gray-300 rounded-md px-10 py-14 min-w-80'>
+    <div className='flex justify-center items-center h-screen px-4 pt-16 lg:px-8 bg-hero-pattern w-full bg-cover'>
+      <form onSubmit={handleSubmit(submit)} className='w-full  md:w-[400px] bg-white grid gap-4 shadow-lg border border-gray-300 rounded-md px-6 py-12 '>
         <label className='flex flex-col gap-2'>
           <span>Name</span>
           <input {...register('name')} placeholder='Enter the name' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 ' type='text' />

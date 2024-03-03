@@ -7,7 +7,7 @@ const ArticlesRTKQ = () => {
   const { data, isLoading, isError, error } = useGetArticlesQuery()
 
   return (
-    <div className='mt-24'>
+    <div className='py-24 bg-hero-pattern w-full bg-repeat-y bg-contain'>
       {isLoading && <h2>Loading...</h2>}
       {isError && <h2>{error}</h2>}
       <ul>
